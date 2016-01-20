@@ -7,6 +7,10 @@ set -e
 # debug
 # set -x
 
+function topic() {
+  echo "-----> $*"
+}
+
 # parse and derive params
 BUILD_DIR=$1
 CACHE_DIR=$2
