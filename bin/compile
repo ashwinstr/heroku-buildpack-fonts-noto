@@ -19,7 +19,7 @@ mkdir -p $CACHE_DIR
 
 topic "Fetching noto fonts"
 cd $CACHE_DIR
-curl -L --silent https://github.com/AriesApp/heroku-buildpack-noto-cjk-fonts/raw/master/fonts.tar.gz  $url | tar x -z
+curl -L --silent https://s3.amazonaws.com/aries_static/qs3/fonts.tar.gz $url | tar x -z
 
 topic "Copying fonts to app folder"
 mkdir $BUILD_DIR/.fonts
