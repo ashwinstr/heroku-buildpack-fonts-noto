@@ -23,4 +23,4 @@ curl -L --silent https://github.com/AriesApp/heroku-buildpack-noto-cjk-fonts/raw
 
 topic "Copying fonts to app folder"
 mkdir $BUILD_DIR/.fonts
-cp $CACHE_DIR/fonts/* $BUILD_DIR/.fonts
+cp $CACHE_DIR/fonts/* $BUILD_DIR/.fonts/
