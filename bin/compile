@@ -14,3 +14,8 @@ CACHE_DIR=$2
 topic "Build dir: $BUILD_DIR"
 
 topic "Fetching noto fonts"
+curl -L --silent https://github.com/AriesApp/heroku-buildpack-noto-cjk-fonts/raw/master/fonts.tar.gz  $url | tar x -z
+
+topic "Copying fonts to app folder"
+mkdir /app/.fonts
+cp fonts/* /app/.fonts
