@@ -15,11 +15,12 @@ function topic() {
 BUILD_DIR=$1
 CACHE_DIR=$2
 
-topic "Build dir: $BUILD_DIR"
+mkdir -p $CACHE_DIR
 
 topic "Fetching noto fonts"
+cd $CACHE_DIR
 curl -L --silent https://github.com/AriesApp/heroku-buildpack-noto-cjk-fonts/raw/master/fonts.tar.gz  $url | tar x -z
 
 topic "Copying fonts to app folder"
-mkdir /app/.fonts
-cp fonts/* /app/.fonts
+mkdir $BUILD_DIR/.fonts
+cp $CACHE_DIR/fonts/* $BUILD_DIR/.fonts
